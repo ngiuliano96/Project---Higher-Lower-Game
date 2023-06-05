@@ -32,17 +32,14 @@ while is_playing:
     
     # Collect player's guess
     player_guess = input("Who has more followers? Type 'A' or 'B': ").lower()
-    
+
+    clear()
+    print(art.logo)
     if compare_followers(person_a, person_b, player_guess):
         score += 1
         # Set next person A to previous person B
         person_a = person_b
-       
-        clear()
-        print(art.logo)
         print(f"You're right! Current score: {score}")
     else:
-        clear()
-        print(art.logo)
         print(f"Sorry, that's wrong. Final score: {score}")
         is_playing = False
